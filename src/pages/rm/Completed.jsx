@@ -77,6 +77,8 @@ const Completed = ({ userId }) => {
         // Completed MUST SHOW them
         return status === "approved" || status === "completed";
       })
+
+
       .filter((c) => {
         if (!searchText) return true;
         const q = searchText.toLowerCase();
@@ -218,16 +220,6 @@ const Completed = ({ userId }) => {
           </Tag>
         );
       },
-    },
-    {
-      title: "Submitted",
-      dataIndex: "submittedToRMAt",
-      width: 110,
-      render: (date) => (
-        <div style={{ fontSize: 12 }}>
-          {date ? dayjs(date).format("DD/MM/YYYY") : "N/A"}
-        </div>
-      ),
     },
     {
       title: "Status",
